@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /checkout/
+Disallow: /cart/
+
+Sitemap: https://www.anuboutique.com/sitemap.xml 

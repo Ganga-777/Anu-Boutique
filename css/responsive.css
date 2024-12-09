@@ -1,0 +1,262 @@
+/* General Responsive Settings */
+:root {
+    --container-width-xl: 1320px;
+    --container-width-lg: 1140px;
+    --container-width-md: 960px;
+    --container-width-sm: 540px;
+}
+
+/* Base Mobile First Approach */
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Extra Small Devices (Phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .measurement-fields {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-card {
+        height: 250px;
+    }
+    
+    .contact-form {
+        padding: 1rem;
+    }
+}
+
+/* Small Devices (Landscape Phones, 576px and up) */
+@media (min-width: 576px) {
+    .container {
+        max-width: var(--container-width-sm);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Medium Devices (Tablets, 768px and up) */
+@media (min-width: 768px) {
+    .container {
+        max-width: var(--container-width-md);
+    }
+    
+    .navbar-brand {
+        margin-right: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .testimonials-slider .swiper-slide {
+        width: 50%;
+    }
+}
+
+/* Large Devices (Desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+        max-width: var(--container-width-lg);
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .service-card {
+        height: 300px;
+    }
+}
+
+/* Extra Large Devices (Large Desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: var(--container-width-xl);
+    }
+}
+
+/* iPhone Specific Styles */
+@supports (-webkit-touch-callout: none) {
+    .hero-section {
+        height: -webkit-fill-available;
+    }
+    
+    .scroll-text {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* MacBook Pro Specific Styles */
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+/* Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* iPad Specific Styles */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .hero-section {
+        height: 60vh;
+    }
+    
+    .service-card {
+        height: 280px;
+    }
+}
+
+/* Navigation Responsive Styles */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+    
+    .navbar-collapse {
+        background: white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .service-card:hover .service-card-inner {
+        transform: none;
+    }
+    
+    .service-card.active .service-card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+/* Safe Area Insets for Modern Devices */
+@supports (padding: max(0px)) {
+    .hero-section {
+        padding-left: max(15px, env(safe-area-inset-left));
+        padding-right: max(15px, env(safe-area-inset-right));
+    }
+}
+
+/* Landscape Mode Optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .hero-content {
+        padding: 4rem 0;
+    }
+}
+
+/* iPhone (Portrait) */
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 812px) 
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+    .hero-section {
+        height: 100vh;
+        height: -webkit-fill-available;
+    }
+}
+
+/* iPad */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) {
+    .hero-section {
+        height: 60vh;
+    }
+}
+
+/* MacBook */
+@media screen 
+and (min-width: 1280px) 
+and (max-width: 1440px) {
+    .hero-section {
+        height: 100vh;
+    }
+}
+
+/* Windows High-DPI */
+@media screen 
+and (min-width: 1920px) {
+    .hero-section {
+        background-image: url('../images/front@2x.jpg');
+    }
+} 
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 40vh;
+    }
+    
+    .hero-background {
+        background-size: contain;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1.2rem;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 576px) {
+    .hero-section {
+        height: 35vh;
+    }
+    
+    .hero-background {
+        background-position: center top;
+    }
+}
+
+/* For landscape mode */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        height: 80vh;
+    }
+}
